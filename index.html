@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTracer</title>
+    <link rel="shortcut icon" href="./assets/images/OIP.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: var(--lm-bg); color: var(--lm-text); display: flex; justify-content: center; align-items: center;">
+    <div class="wrapper">
+        <header class="header mt-8 flex justify-between items-baseline">
+            <h1 class="title font-extrabold text-[30px]">DevTracer</h1>
+            <div id="btn-mode" class="flex space-x-6 cursor-pointer">
+                <p id="mode-text">Light</p>
+                <div class="icon-container"><img id="mode-icon" src="./assets/images/moon-icon.svg" alt="Mode Icon"></div>
+            </div>
+        </header>
+        <!-- SearchBar  -->
+        <div>
+            <form class="searchbar-container active bg-[#1e2a47] text-white rounded-lg mt-10 p-2 mb-4 flex h-[90px] w-[100%] mr-[20%]">
+                <input type="search" placeholder="Enter a Github username ..." spellcheck="false" name="user-input" id="input" required
+                    class="text-[20px] focus:border-none placeholder-white px-8 pl-12 mx-2 bg-[url('./assets/images/search-icon.svg')] bg-no-repeat items-baseline bg-left bg-transparent w-full">
+                <button type="button" class="btn-search rounded-md bg-[#0079ff] mr-3 my-2 px-5 hover:bg-[#60abff] text-[15px]" id="submit">Search</button>
+            </form>
+            <p class="error text-red-400 text-[20px]" id="no-results">Username Not Found</p>
+        </div>
+
+        <!-- Main Container  -->
+        <div class="profile-container bg-[#1e2a47] min-w-[800px] rounded-md shadow-2xl">
+            <!-- Intro Tap -->
+            <div class="profile-header flex justify-self-end relative">
+                <img src="#" alt="Avatar" id="avatar" class="w-[100px] h-[100px] ml-[4rem] rounded-full mx-4 mt-[45px]
+                mr-[20px]">
+                <div class="profile-name flex flex-col mt-[40px] ml-[4rem] p-2 text-[30px]">
+                    <h2 id="name" class="font-extrabold"></h2>
+                    <a href="#" rel="noopener noreferrer" id="user" class="text-[#0079ff] text-[18px] mt-[2px]"></a>
+                    <div class="accomplishments text-gray-500 text-[18px] mt-[10px]">
+                        <p id="bio" class="text-[#ffffff] max-w-[600px] ml-0 leading-6 m-0 p-0 opacity-70"></p>
+                    </div>
+                    
+                </div>
+                <div id="date" class="absolute top-[30%] right-[5%] text-[15px]"></div>
+            </div>
+
+            <!-- Accomplishments Page -->
+            
+            
+            <!-- Following -->
+            <div class="profile-stats-wrapper flex flex-row ml-[30%] mt-[50px] w-[50%] gap-16
+            bg-[#141d2f] justify-center text-[18px] p-5 rounded-xl">
+                <div class="profile-stat">
+                    <p class="stat-title">Repos</p>
+                    <p id="repos" class="stat-value"></p>
+                </div>
+
+                <div class="profile-stat">
+                    <p class="stat-title">Followers</p>
+                    <p id="followers" class="stat-value"></p>
+                </div>
+
+                <div class="profile-stat">
+                    <p class="stat-title">Following</p>
+                    <p id="following" class="stat-value"></p>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="links grid grid-cols-2 grid-rows-2 gap-x-10 mt-16 ml-[30%]  mb-[100px]">
+                <div class="flex flex-row space-x-4">
+                    <img src="./assets/images/location-icon.svg" alt="Location Icon" class="buttom-icons w-[20px] h-[20px]">
+                    <div id="location">Not Available</div>
+                </div>
+
+                <div class="flex flex-row space-x-4">
+                    <img src="./assets/images/website-icon.svg" alt="Website Icon" class="w-[20px] h-[20px]">
+                    <a href="#" id="page">Not Available</a>
+                </div>
+
+                <div class="flex flex-row space-x-4">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter Icon" class=" w-[20px] h-[20px]">
+                    <a href="#" id="twitter">Not Available</a>
+                </div>
+
+                <div class="flex flex-row space-x-4 mb-6">
+                    <img src="./assets/images/company-icon.svg" alt="Company Icon" class="w-[20px] h-[20px]">
+                    <p id="company">Not Available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="style.js"></script>
+</body>
+</html>
